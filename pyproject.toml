@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "trade-net"
+version = "0.1.0"
+description = ""
+authors = ["Michael Gorbunov <mg0rby@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flake8 = "^7.1.2"
+django = "^5.1.6"
+django-filter = "^25.1"
+python-dotenv = "^1.0.1"
+psycopg2-binary = "^2.9.10"
+djangorestframework = "^3.15.2"
+djangorestframework-simplejwt = "^5.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
