@@ -12,6 +12,7 @@ class TradeNodeAdmin(admin.ModelAdmin):
     # inlines = [AvailableProductsInline]
     list_display = ('name', 'supplier_link', 'city','debt_to_supplier', 'level')
     list_filter = ('city',)
+    actions = ['clear_debt']
     # search_fields = ('name', 'email', 'country', 'city', 'street', 'house_number')
     def supplier_link(self, obj):
         if obj.supplier:
@@ -19,6 +20,11 @@ class TradeNodeAdmin(admin.ModelAdmin):
         return 'None'
 
     supplier_link.short_description = 'Поставщик'
+
+    def clear_debt(self, request, queryset):
+        queryset.update(debt_to_supplier=0.00)
+
+    clear_debt.short_description = "Очистить задолженность у выбранных объектов"
 
 # Register your models here.
 
