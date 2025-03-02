@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 NULLABLE = {"null": True, "blank": True}
 
@@ -38,6 +39,16 @@ class TradeNode(models.Model):
         if self.supplier is None:
             return level
         return self.supplier.level() + 1
+
+    def clean(self):
+        if self.supplier and self.supplier.level() >= 2:
+            raise ValidationError("Число вложенностей уровня иерархии превышено")
+        if self.supplier and self == self.supplier:
+            raise ValidationError("Нельзя назначать себя поставщиком")
+
+    def save(self, *args, **kwargs):
+        self.full_clean()  # Выполняем валидацию перед сохранением
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.name} (Level {self.level()})"
