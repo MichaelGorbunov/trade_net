@@ -1,0 +1,130 @@
+[
+  {
+    "model": "trade.tradenode",
+    "pk": 1,
+    "fields": {
+      "name": "завод1",
+      "email": "info@zavod1.ru",
+      "country": "Россия",
+      "city": "Рыбинск",
+      "street": "Мандариновая",
+      "house_number": "5",
+      "supplier": null,
+      "debt_to_supplier": "0.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 2,
+    "fields": {
+      "name": "завод2",
+      "email": "info@zavod2.ru",
+      "country": "Китай",
+      "city": "Пекин",
+      "street": "Апельсиновая",
+      "house_number": "5",
+      "supplier": null,
+      "debt_to_supplier": "0.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 3,
+    "fields": {
+      "name": "завод3",
+      "email": "info@zavod3.ru",
+      "country": "Беларусь",
+      "city": "РыбМинскинск",
+      "street": "Лесная",
+      "house_number": "5",
+      "supplier": null,
+      "debt_to_supplier": "0.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 4,
+    "fields": {
+      "name": "ритейл1",
+      "email": "info@retail1.ru",
+      "country": "Россия",
+      "city": "Вельск",
+      "street": "Дружбы",
+      "house_number": "5",
+      "supplier": 1,
+      "debt_to_supplier": "0.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 5,
+    "fields": {
+      "name": "ритейл2",
+      "email": "info@retail2.ru",
+      "country": "Беларусь",
+      "city": "Минск",
+      "street": "Лесная",
+      "house_number": "5",
+      "supplier": 2,
+      "debt_to_supplier": "100.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 6,
+    "fields": {
+      "name": "ритейл3",
+      "email": "info@retail.ru",
+      "country": "Беларусь",
+      "city": "Минск",
+      "street": "Лесная",
+      "house_number": "5",
+      "supplier": 3,
+      "debt_to_supplier": "100.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 7,
+    "fields": {
+      "name": "магазин1",
+      "email": "info@magazin1.ru",
+      "country": "Россия",
+      "city": "Саратов",
+      "street": "Липовая",
+      "house_number": "5",
+      "supplier": 5,
+      "debt_to_supplier": "0.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  },
+  {
+    "model": "trade.tradenode",
+    "pk": 8,
+    "fields": {
+      "name": "магазин2",
+      "email": "info@magazin2.ru",
+      "country": "Россия",
+      "city": "Саратов",
+      "street": "Садовая",
+      "house_number": "8",
+      "supplier": 6,
+      "debt_to_supplier": "100.00",
+      "products": [],
+      "created_at": "2025-03-03T04:24:11.751Z"
+    }
+  }
+]

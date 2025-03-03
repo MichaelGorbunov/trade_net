@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "aba8a208-e3fd-4d84-b117-fcbfb4da3cef",
+		"name": "trade_network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38056528"
+	},
+	"item": [
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \"first_name\": \"Иван\",\r\n    \"last_name\": \"Иванов\",\r\n    \"email\": \"ivanov_i@trade.ru\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":        \"ivanov_i@trade.ru\"    ,\r\n    \"password\":         \"123456789\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/login/",
+				"description": "login"
+			},
+			"response": []
+		},
+		{
+			"name": "user info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzQzNDI3LCJpYXQiOjE3NDA5MTE0MjcsImp0aSI6ImRmNWVhM2M4MjNkZTQyMTA5N2FmYWY1MmQyMmE2YTJjIiwidXNlcl9pZCI6NH0.C735BNvg2lSRdSs59RaRjG157JfEYbrbdNRsQT8zMfI",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/users/users/4/"
+			},
+			"response": []
+		},
+		{
+			"name": "list node",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxNDA4NjI5LCJpYXQiOjE3NDA5NzY2MjksImp0aSI6IjA0ZWY3NDdiMDBjMzQ1MDNiMTk4NGMzNjIxNDQ4ZDVjIiwidXNlcl9pZCI6Mn0.VTUHap_1UthHMueOtPdkoSDQHfm9TGo7vsKctDbrgfc",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/nodes/"
+			},
+			"response": []
+		},
+		{
+			"name": "list node filtered country",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxNDA4NjI5LCJpYXQiOjE3NDA5NzY2MjksImp0aSI6IjA0ZWY3NDdiMDBjMzQ1MDNiMTk4NGMzNjIxNDQ4ZDVjIiwidXNlcl9pZCI6Mn0.VTUHap_1UthHMueOtPdkoSDQHfm9TGo7vsKctDbrgfc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/nodes/?country=Россия",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"nodes",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Россия"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user_2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \"first_name\": \"Петр\",\r\n    \"last_name\": \"Петров\",\r\n    \"email\": \"petrov_p@trade.ru\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "update node",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxNDA4NjI5LCJpYXQiOjE3NDA5NzY2MjksImp0aSI6IjA0ZWY3NDdiMDBjMzQ1MDNiMTk4NGMzNjIxNDQ4ZDVjIiwidXNlcl9pZCI6Mn0.VTUHap_1UthHMueOtPdkoSDQHfm9TGo7vsKctDbrgfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n        \"debt_to_supplier\": \"100.00\",\r\n        \"house_number\": \"5\"\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/nodes/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "login user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":        \"petrov_p@trade.ru\"    ,\r\n    \"password\":         \"123456789\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "create node",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxNDA4NjI5LCJpYXQiOjE3NDA5NzY2MjksImp0aSI6IjA0ZWY3NDdiMDBjMzQ1MDNiMTk4NGMzNjIxNDQ4ZDVjIiwidXNlcl9pZCI6Mn0.VTUHap_1UthHMueOtPdkoSDQHfm9TGo7vsKctDbrgfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n    \"name\": \"завод3\",\r\n    \"email\": \"info@zavod3.ru\",\r\n    \"country\": \"Беларусь\",\r\n    \"city\": \"РыбМинскинск\",\r\n    \"street\": \"Лесная\",\r\n    \"house_number\": \"5\",\r\n    \"debt_to_supplier\": \"0.00\",\r\n   \r\n    \"supplier\": 25,\r\n  \r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/nodes/"
+			},
+			"response": []
+		}
+	]
+}

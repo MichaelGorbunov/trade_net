@@ -95,3 +95,8 @@ http://127.0.0.1:8000/users/login/-авторизация
 http://127.0.0.1:8000/api/nodes/-работа с юнитами торговой сети
 
 ```
+10. Готовые данные для модели TradeNode можно загрузить
+```commandline
+python manage.py loaddata trade_node_fixture.json --format json
+```
+11. Минимальная коллекция для использования с Postman содержится в файле trade_network.postman_collection.json
