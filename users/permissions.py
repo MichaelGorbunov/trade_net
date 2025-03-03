@@ -6,3 +6,8 @@ class IsAccountOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
         # Убедимся, что `obj` — это пользователь, и он соответствует аутентифицированному пользователю.
         return obj == request.user
+
+
+class IsActiveUserPermission(BasePermission):
+    def has_permission(self, request, view):
+        return request.user and request.user.is_active
