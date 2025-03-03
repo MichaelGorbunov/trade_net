@@ -7,48 +7,70 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('trade', '0002_delete_trademember'),
+        ("trade", "0002_delete_trademember"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tradenode',
-            name='city',
-            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='город'),
+            model_name="tradenode",
+            name="city",
+            field=models.CharField(
+                blank=True, max_length=100, null=True, verbose_name="город"
+            ),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='country',
-            field=models.CharField(default='Россия', max_length=100, verbose_name='страна'),
+            model_name="tradenode",
+            name="country",
+            field=models.CharField(
+                default="Россия", max_length=100, verbose_name="страна"
+            ),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='debt_to_supplier',
-            field=models.DecimalField(decimal_places=2, default=0.0, max_digits=10, verbose_name='задолженность'),
+            model_name="tradenode",
+            name="debt_to_supplier",
+            field=models.DecimalField(
+                decimal_places=2,
+                default=0.0,
+                max_digits=10,
+                verbose_name="задолженность",
+            ),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='house_number',
-            field=models.CharField(blank=True, max_length=10, null=True, verbose_name='номер дома'),
+            model_name="tradenode",
+            name="house_number",
+            field=models.CharField(
+                blank=True, max_length=10, null=True, verbose_name="номер дома"
+            ),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='name',
-            field=models.CharField(max_length=255, verbose_name='название'),
+            model_name="tradenode",
+            name="name",
+            field=models.CharField(max_length=255, verbose_name="название"),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='products',
-            field=models.ManyToManyField(blank=True, to='trade.product', verbose_name='список продуктов'),
+            model_name="tradenode",
+            name="products",
+            field=models.ManyToManyField(
+                blank=True, to="trade.product", verbose_name="список продуктов"
+            ),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='street',
-            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='улица'),
+            model_name="tradenode",
+            name="street",
+            field=models.CharField(
+                blank=True, max_length=100, null=True, verbose_name="улица"
+            ),
         ),
         migrations.AlterField(
-            model_name='tradenode',
-            name='supplier',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='suppliers', to='trade.tradenode', verbose_name='поставщик'),
+            model_name="tradenode",
+            name="supplier",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="suppliers",
+                to="trade.tradenode",
+                verbose_name="поставщик",
+            ),
         ),
     ]
