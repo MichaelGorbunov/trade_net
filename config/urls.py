@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("favicon.ico", RedirectView.as_view(url="/static/img/favicon.ico")),
     path("users/", include("users.urls", namespace="users")),
+    path('api/', include('trade.urls')),
 ]

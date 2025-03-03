@@ -15,4 +15,5 @@ class Command(BaseCommand):
         user.set_password("123456789")
         user.is_staff = True
         user.is_superuser = True
+        user.is_active = True
         user.save()
