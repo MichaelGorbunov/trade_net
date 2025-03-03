@@ -4,6 +4,8 @@ from django.db import models
 NULLABLE = {"blank": True, "null": True}
 
 
+
+
 class CustomUser(AbstractUser):
     username = None
     first_name = models.CharField(
@@ -17,6 +19,7 @@ class CustomUser(AbstractUser):
     )
 
     is_active = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
@@ -24,6 +27,8 @@ class CustomUser(AbstractUser):
     class Meta:
         verbose_name = "пользователь"
         verbose_name_plural = "пользователи"
+
+
 
     def __str__(self):
         return self.email

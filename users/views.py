@@ -35,7 +35,6 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         # Создаём пользователя
         user = serializer.save()
         user.set_password(user.password)  # Хешируем пароль
-        user.is_active = True  # Установить активным по умолчанию
         user.save()
 
     def get_serializer_class(self):
